@@ -1,8 +1,8 @@
 import java.util.Stack;
 
 public class Parenthesis {
-    public boolean isValid(String s) {
-        Stack<Character> st = new Stack<Character>();
+    public static boolean isValid(String s) {
+        Stack<Character> st = new Stack<>();
         for (char c : s.toCharArray()) {
             if (c == '(' || c == '{' || c == '[') {
                 st.push(c);
@@ -23,5 +23,17 @@ public class Parenthesis {
             }
         }
         return st.isEmpty();
+    }
+    public static void main(String [] s)
+    {
+        String text="()[]{}";
+        boolean ans=isValid(text);
+        if(ans) {
+            System.out.println("The string is valid");
+        }
+        else
+        {
+            System.out.println("The string is not valid");
+        }
     }
 }
